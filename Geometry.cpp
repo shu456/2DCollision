@@ -12,11 +12,18 @@ bool PointOnLine(Line const& l, Point const& p)
 
 double DistanceFromPointToLine(Line const& l, Point const& p)
 {
+  Vector2D const& v1 = l.direction;
   Vector2D v2(l.origin, p);
 
-  /**Not done yet.*/
+  // | v1 | * | v2 | * cos theta = scalar
+  // let |v1| = 1 (Line construction will normalize the direction vector)
+  // | v2 | * cos theta = scalar
+  // with reference to C = A/H
+  // cos theta = scalar / |v2| 
+  double scalar = DotProduct(v1, v2);
+  double len = Length(v2);
 
-  return DotProduct(v2, l.direction);
+  return (scalar / len);
 }
 
 Line::Line(Point const& p, Vector2D const& v) : origin(p), direction(v) 
