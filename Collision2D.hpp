@@ -1,23 +1,8 @@
 #ifndef COLLISION2D_HPP
 #define COLLISION2D_HPP
 
-#include <cmath>
-#include <limits>
-
+#include "GeoMath.hpp"
 #include "shape.hpp"
-
-//helpers
-template<typename T>
-bool isEqual(T a, T b)
-{
-    return std::fabs(a - b) < std::numeric_limits<T>::epsilon();
-}
-
-template<typename T>
-bool isEqual(T a)
-{
-    return std::fabs(a) < std::numeric_limits<T>::epsilon();
-}
 
 //Check with p1 is within p2 and p3
 bool NumberWithinRanged(double p1, double p2, double p3)
@@ -93,7 +78,7 @@ bool StaticCircleCollisionCheck(Circle const& A, Circle const& B)
     return true;
   
   //if just touching the border
-  if( isEqual(dist) )
+  if(isEqualZero(dist) )
     return true;
   
   return false;

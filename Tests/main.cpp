@@ -1,5 +1,7 @@
 #include <iostream>
-#include "Collision2D.hpp"
+#include "../Collision2D.hpp"
+
+void PointOnLineTest();
 
 template<typename Shape, typename Func>
 void PrintResult(Func f, Shape const& A, Shape const& B)
@@ -53,5 +55,6 @@ int main()
   TestCircle();
   TestRect(AABB,"AABB");
   TestRect(AABBNonOpt,"AABBNonOpt");
+  PointOnLineTest();
   return 0;
 }

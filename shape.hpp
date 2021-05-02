@@ -1,12 +1,7 @@
 #ifndef SHAPE_HPP
 #define SHAPE_HPP
 
-struct Point
-{
-  Point(double _x,double _y) : x(_x),y(_y) {}
-  double x;
-  double y;
-};
+#include "Geometry.hpp"
 
 struct BaseShape
 {
